@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+
+
+<link href="stile-modelli.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="simplegallery.js">   
+
+/***********************************************
+* Simple Controls Gallery- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
+<script type="text/javascript">
+
+var immagini=new Array(); 
+var dati_immagini=new Array(); 
+var url_img=new Array(); 
+var url=new Array(); 
+var target=new Array(); 
+var text=new Array(); 
+
+for (b=0; b<120; b++){
+ num=b+1
+ url_img[b]="https://149.139.8.55/last/bencla_ita_"+num.toString()+".png"
+ url[b]=""
+ target[b]=""
+ text[b]="t=+"+num.toString()+" h"
+}
+
+
+for (a=0; a<120; a++){
+	immagini[a]=[url_img[a],url[a],target[a],text[a]]
+}
+
+/*document.writeln(immagini[1])*/ 
+
+var mygallery=new simpleGallery({
+	wrapperid: "simplegallery1", //ID of main gallery container,
+	dimensions: [751, 580], //width/height of gallery in pixels. Should reflect dimensions of the images exactly
+	imagearray: immagini,
+	autoplay: [true, 200, 2], //[auto_play_boolean, delay_btw_slide_millisec, cycles_before_stopping_int]
+	persist: false, //remember last viewed slide and recall within same session?
+	fadeduration: 250, //transition duration (milliseconds)
+	oninit:function(){ //event that fires when gallery has initialized/ ready to run
+		//Keyword "this": references current gallery instance (ie: try this.navigate("play/pause"))
+	},
+	onslide:function(curslide, i){ //event that fires after each slide is shown
+		//Keyword "this": references current gallery instance
+		//curslide: returns DOM reference to current slide's DIV (ie: try alert(curslide.innerHTML)
+		//i: integer reflecting current image within collection being shown (0=1st image, 1=2nd etc)
+	}
+})
+
+</script>
+</head>
+<body> 
+<link href="http://www.biometeo.it/wp-content/themes/skeleton/zonazero-sc/stili-tabelle/style.css" rel="stylesheet" type="text/css" />
+<table id="bio-meteo-modelli">
+<thead>
+  <tr>
+    <td class="bio-meteo-modelli-th" colspan="2">Disagio termico outdoor in ombra con Universal Thermal Climate Index</td>
+  </tr>
+</thead>
+<tr>
+    <th width="700px" rowspan="11" class="bio-meteo-modelli-bianco"><div id="simplegallery1"></div></th>
+<tr>
+    <td class="bio-meteo-modelli-menu"><a href="windchillcla.html">Livelli di rischio Congelamento</a></td>
+  </tr>
+  <tr>
+    <td class="bio-meteo-modelli-menu-select"><a href="bencla.html">Disagio termico outdoor in ombra (UTCI)</a></td>
+  </tr>
+  <tr>
+    <td class="bio-meteo-modelli-menu"><a href="stosuncla.html">Disagio termico outdoor al sole (Indice di Steadman)</a></td>
+</tr>
+  <tr>
+    <td class="bio-meteo-modelli-menu"><a href="index.html">Disagio termico outdoor al sole (UTCI)</a></td>
+  </tr>
+</table>
+</body>
+</html>
